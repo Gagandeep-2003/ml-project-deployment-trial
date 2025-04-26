@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wildfire Prediction</title>
+</head>
+<body>
+    <h1>Predict Wildfire</h1>
+    
+    <form action="{{ url_for('predict_datapoint') }}" method="post">
+        <label>Temperature:</label><br>
+        <input type="text" name="Temperature" placeholder="Enter Temperature" value="25.0"><br><br>
+
+        <label>Relative Humidity (RH):</label><br>
+        <input type="text" name="RH" placeholder="Enter RH" value="45.0"><br><br>
+
+        <label>Wind Speed (Ws):</label><br>
+        <input type="text" name="Ws" placeholder="Enter Wind Speed" value="12.0"><br><br>
+    
+        <label>Rain:</label><br>
+        <input type="text" name="Rain" placeholder="Enter Rainfall" value="0.0"><br><br>
+
+        <label>Fine Fuel Moisture Code (FFMC):</label><br>
+        <input type="text" name="FFMC" placeholder="Enter FFMC" value="85.0"><br><br>
+
+        <label>Duff Moisture Code (DMC):</label><br>
+        <input type="text" name="DMC" placeholder="Enter DMC" value="15.0"><br><br>
+
+        <label>Initial Spread Index (ISI):</label><br>
+        <input type="text" name="ISI" placeholder="Enter ISI" value="5.0"><br><br>
+
+        <label>Classes:</label><br>
+        <input type="text" name="Classes" placeholder="Enter Classes" value="1"><br><br>
+
+        <label>Region:</label><br>
+        <input type="text" name="Region" placeholder="Enter Region" value="2"><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h2>Predicted value: {{ result }}</h2>
+</body>
+</html>
